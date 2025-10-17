@@ -6,13 +6,13 @@
 void print_menu() 
 {
     printf("\n--- Calculator ---\n");
-    printf("1. Addition\n");
-    printf("2. Subtraction\n");
-    printf("3. Multiplication\n");
-    printf("4. Division\n");
-    printf("5. Factorial\n");
-    printf("6. Square Root\n");
-    printf("0. Exit\n");
+    printf("Addition       - 1\n");
+    printf("Subtraction    - 2\n");
+    printf("Multiplication - 3\n");
+    printf("Division       - 4\n");
+    printf("Factorial      - 5\n");
+    printf("Square Root    - 6\n");
+    printf("Exit           - 0\n");
     printf("Select operation: ");
 }
 
@@ -67,19 +67,19 @@ int main()
         {
             case 1:
                 result = add(num1, num2);
-                printf("Result: %.2f\n", result);
+                printf("\nResult: %.2f\n", result);
                 break;
             case 2:
                 result = sub(num1, num2);
-                printf("Result: %.2f\n", result);
+                printf("\nResult: %.2f\n", result);
                 break;
             case 3:
                 result = mul(num1, num2);
-                printf("Result: %.2f\n",result);
+                printf("\nResult: %.2f\n",result);
                 break;
             case 4:
                 result = division(num1, num2);
-		printf("Result:%.2f\n", result);
+		printf("\nResult:%.2f\n", result);
                 break;
             case 5:
                 num_int = (int)num1;
@@ -96,7 +96,7 @@ int main()
                     } 
                     else 
                     {
-                        printf("Result: %lld\n", fact_result);
+                        printf("\nResult: %lld\n", fact_result);
                     }
                 }
                 break;
@@ -108,7 +108,7 @@ int main()
                 } 
                 else 
                 {
-                    printf("Result:%.2f\n", result);
+                    printf("\nResult:%.2f\n", result);
                 }
                 break;
             default:

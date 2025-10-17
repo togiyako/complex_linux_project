@@ -5,7 +5,7 @@
 
 void menu()
 {   
-    printf("\n--Menu--\n");
+    printf("\n-- Converter --\n");
     printf("Upper text - 1\n");
     printf("Lower text - 2\n");
     printf("Exit       - 0\n");

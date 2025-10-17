@@ -5,7 +5,7 @@ void lower(char *str)
 {
     while(*str)
     {
-        *str = tolower((unsigned char)*str);
+        *str = tolower(*str);
         str++;
     }
 }
