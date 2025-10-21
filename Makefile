@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -I.
 LDFLAGS_TASK1 = -L./task1/lib -lcalc -lm
-LDFLAGS_TASK2 = -lconvert
+LDFLAGS_TASK2 = -L$(TASK2_DIR) -lconvert
 
 TASK1_DIR = task1
 TASK1_LIB_DIR = $(TASK1_DIR)/lib
@@ -32,7 +32,7 @@ $(TASK1_LIB_DIR)/%.o: $(TASK1_LIB_DIR)/%.c $(TASK1_LIB_DIR)/calc.h
 	$(CC) $(CFLAGS) -c $< -o $@
 	
 # Task 2
-$(TASK2_EXECUTABLE): $(TASK2_MAIN)
+$(TASK2_EXECUTABLE): $(TASK2_MAIN) $(TASK2_DIR)/libconvert.so
 	$(CC) $(CFLAGS) $< -o $@ $(LDFLAGS_TASK2)
 
 $(TASK2_DIR)/libconvert.so: $(TASK2_OBJECTS)
@@ -45,6 +45,7 @@ install: $(TASK2_DIR)/libconvert.so
 	sudo cp $(TASK2_DIR)/libconvert.so /usr/lib
 	sudo chmod 0755 /usr/lib/libconvert.so
 	sudo ldconfig
+	rm -f $(TASK2_DIR)/libconvert.so
 
 uninstall:
 	sudo rm -f /usr/lib/libconvert.so

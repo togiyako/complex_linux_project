@@ -90,10 +90,15 @@ int main()
                 else 
                 {
                     long long fact_result = factorial(num_int);
-                    if (fact_result < 0) 
+                    
+                    if (fact_result == -1)
                     {
                         printf("Factorial can only be calculated for a non-negative number.\n");
-                    } 
+                    }
+                    else if (fact_result == -2)
+                    {
+                        printf("Error: Input %d is too large, result will overflow.\n", num_int);
+                    }
                     else 
                     {
                         printf("\nResult: %lld\n", fact_result);

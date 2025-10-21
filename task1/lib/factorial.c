@@ -6,7 +6,13 @@ long long factorial(int n)
     {
         return -1;
     }
-    if (n == 0) {
+    
+    if( n > 20)
+    {
+    	return -2;
+    }
+    	
+    if(n == 0) {
         return 1;
     }
 

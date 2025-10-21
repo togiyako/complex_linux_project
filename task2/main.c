@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "lib/convert.h"
 #include <stdlib.h>
-
+#include <string.h>
 
 void menu()
 {   
@@ -36,6 +36,17 @@ int main()
             printf("Enter text:");
             if(fgets(text, sizeof(text), stdin))
             {
+                if (strchr(text, '\n') == NULL) 
+                {
+                    printf("\n[Warning: Input was too long and truncated.]\n");
+                    int c;
+                    while ((c = getchar()) != '\n' && c != EOF);
+                } 
+                else 
+                {
+                    text[strcspn(text, "\n")] = 0;
+                }
+
                 upper(text);
                 printf("Result: %s", text);
             }
@@ -45,6 +56,17 @@ int main()
             printf("Enter text:");
             if(fgets(text, sizeof(text), stdin))
             {
+                if (strchr(text, '\n') == NULL) 
+                {
+                    printf("\n[Warning: Input was too long and truncated.]\n");
+                    int c;
+                    while ((c = getchar()) != '\n' && c != EOF);
+                }
+                else 
+                {
+                    text[strcspn(text, "\n")] = 0;
+                }
+
                 lower(text);
                 printf("Result: %s", text);
             }
